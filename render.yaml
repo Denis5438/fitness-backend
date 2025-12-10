@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: fitness-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_PATH
+        value: ./fitness.db
+      - key: WEBAPP_URL
+        value: https://fitness-webapp-tg.netlify.app
+      - key: CORS_ORIGINS
+        value: https://fitness-webapp-tg.netlify.app
+      - key: AI_MODEL
+        value: gpt-4o-mini
+      - key: AI_MAX_TOKENS
+        value: 500
+      - key: AI_TEMPERATURE
+        value: 0.7
+      - key: FREE_TIER_AI_REQUESTS
+        value: 10
+      - key: PRO_TIER_AI_REQUESTS
+        value: -1
